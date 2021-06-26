@@ -1,5 +1,6 @@
 import React from 'react'
 import PlayerService from '../Services/PlayerService'
+import '../App.css'
 
 class ListPlayers extends React.Component {
     constructor(props)
@@ -59,7 +60,7 @@ class ListPlayers extends React.Component {
                             <tr>
                                 <th>Player ID</th>
                                 <th>Player Name</th>
-                                <th>Player Age</th>
+                                <th>Player Age</th> 
                                 <th>Player Username</th>
                                 <th>Player Email</th>
                                 <th>Created At</th>
@@ -70,6 +71,7 @@ class ListPlayers extends React.Component {
                                 this.state.players.map(
                                     player =>
                                     <tr key={player.id}>
+                                        <td>{player.id}</td>
                                         <td>{player.name}</td>
                                         <td>{player.age}</td>
                                         <td>{player.username}</td>
@@ -81,6 +83,43 @@ class ListPlayers extends React.Component {
                         </tbody>
                     </table>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="container">
+  <h2>Players <small>Info for games</small></h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">ID</div>
+      <div class="col col-2">Player Name</div>
+      <div class="col col-3">Age</div>
+      <div class="col col-4">UserName</div>
+      <div class="col col-4">Email</div>
+      <div class="col col-4">Created At</div>
+    </li>
+   
+    <li class="table-row">
+      <div class="col col-1" data-label="Job Id">42311</div>
+      <div class="col col-2" data-label="Customer Name">John Carpenter</div>
+      <div class="col col-3" data-label="Amount">$115</div>
+      <div class="col col-4" data-label="Payment Status">Pending</div>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
             </div>
 
 

@@ -4,6 +4,8 @@ import * as FcIcons from 'react-icons/fc'
 
 
 
+
+
 export const SidebarData = [
     {
     title:'Home',
@@ -14,19 +16,19 @@ export const SidebarData = [
     {
     title:'Dashboard',
     link:'/dashboard',
-    icon: <FcIcons.FcAbout/>,
+    icon: <AiIcons.AiFillDashboard/>,
     cName: 'nav-text'
     },
     {
-    title:'Profile',
+    title:'Manage Users',
     link:'/profile',
-    icon: <AiIcons.AiFillContacts/>,
+    icon: <FcIcons.FcManager/>,
     cName: 'nav-text'
     },
     {
     title:'About',
     link:'/about',
-    icon: <AiIcons.AiFillContacts/>,
+    icon: <FcIcons.FcAbout/>,
     cName: 'nav-text'
     },
 ]

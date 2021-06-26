@@ -17,6 +17,7 @@ constructor(props)
         username:'',
         email:'',
         password:'',
+        created_by:new Date()
      
 
     }
@@ -27,14 +28,8 @@ constructor(props)
 
 
 post(){
-    axios.post('http://localhost:8081/api/addplayer',{
-        name:this.state.name,
-        age:this.state.age,
-        username:this.state.username,
-        email:this.state.email,
-        password:this.state.password,
-  
-    })
+    const {created_by} = this.state;
+    axios.post('http://localhost:8081/api/addplayer',{...this.state, created_by: created_by ? created_by.getTime():null})
 
     .then(function(response){
         console.log(response);
