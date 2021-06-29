@@ -3,16 +3,17 @@ import AddPlayer from './Components/AddPlayer';
 import DeletePlayer from './Components/DeletePlayer';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import UpdatePlayer from './Components/UpdatePlayer';
-import './App.css';
 import Navbar from './NavBar/navbar';
 import SearchPlayer from './Components/SearchPlayer';
+import Footer from './Footer/Footer';
+import './App.scss';
 
 
 function App() {
   return (
           <div>
             <Router>
-            <div className="container">
+            <div className="containerr">
               <Navbar/>
               <Switch>
                 <Route path = "/" exact component = {ListPlayers}></Route>
@@ -25,6 +26,7 @@ function App() {
               </Switch>
             </div>
             </Router>
+            <Footer/>
           
           </div>
   );

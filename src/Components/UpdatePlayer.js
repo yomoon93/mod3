@@ -11,9 +11,6 @@ class UpdatePlayer extends React.Component{
             id:3,
             username:'',
             email:'',
-           
-         
-    
         }
         this.handleChange = this.handleChange.bind(this)
         this.update = this.update.bind(this)

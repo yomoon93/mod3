@@ -17,9 +17,8 @@ constructor(props)
         username:'',
         email:'',
         password:'',
-        created_by:new Date()
+        // created_at:""
      
-
     }
     this.handleChange = this.handleChange.bind(this)
     this.post = this.post.bind(this)
@@ -28,13 +27,24 @@ constructor(props)
 
 
 post(){
-    const {created_by} = this.state;
-    axios.post('http://localhost:8081/api/addplayer',{...this.state, created_by: created_by ? created_by.getTime():null})
+    let player={
+        name: this.state.name,
+        age: this.state.age,
+        username:this.state.username,
+        email:this.state.email,
+        password:this.state.password,
+        // created_at:this.state.created_at
+     };
 
+
+    axios.post('http://localhost:8081/api/addplayer',player)
     .then(function(response){
         console.log(response);
-    })
-}
+        alert("You have been added");
+    }).catch(()=>{
+        console.log("This is a duplicate")
+        alert("This is a duplicate") 
+})}
 handleChange(event){
     let n = event.target.name
     let value = event.target.value
