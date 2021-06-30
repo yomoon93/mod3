@@ -11,22 +11,27 @@ import './App.scss';
 
 function App() {
   return (
-          <div>
+            <div>
+            {/* <div className="content-wrap"> */}
+
+         
             <Router>
-            <div className="containerr">
-              <Navbar/>
+            <Navbar/>
+
+
               <Switch>
                 <Route path = "/" exact component = {ListPlayers}></Route>
-                <Route path = "/students" component = {ListPlayers}></Route>
+                <Route path = "/player" component = {ListPlayers}></Route>
                 <Route path = "/addplayer" component = {AddPlayer}></Route>
                 <Route path = "/deleteplayer" component = {DeletePlayer}></Route>
                 <Route path = "/updateplayer" component = {UpdatePlayer}></Route>
                 <Route path = "/searchplayer" component = {SearchPlayer}></Route>
                 
               </Switch>
-            </div>
+         
             </Router>
-            <Footer/>
+            {/* </div> */}
+            {/* <Footer/> */}
           
           </div>
   );

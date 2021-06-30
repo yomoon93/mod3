@@ -17,18 +17,18 @@ const Footer = () => {
                    </div>
                    <div className="col">
                        <h4>Find Me On</h4>
-                       <ul>
+                       <ul className="list-unstyled">
                            <li>github.com/yomoon93</li>
                            <li>linkedin.com/in/kevinmunar/</li>
                            <li>twitter.com/yomunar</li>
                        </ul>
                    </div>
+               </div>
                    <div className="row">
                        <p className="col-sm">
                            &copy;{new Date().getFullYear()} Moon Doc INC | All right reserved | Terms of Service | Privacy
                        </p>
                    </div>
-               </div>
            </div>
 
 

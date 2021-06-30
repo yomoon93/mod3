@@ -8,23 +8,26 @@ class UpdatePlayer extends React.Component{
     {
         super(props)
         this.state={
-            id:3,
+            id:'',
+            name:'',
             username:'',
             email:'',
+
         }
         this.handleChange = this.handleChange.bind(this)
         this.update = this.update.bind(this)
+       
+
     }
     
     
     
     update(){
         axios.put(`http://localhost:8081/api/player/${this.state.id}`,{
-           
+            name:this.state.name,
             username:this.state.username,
             email:this.state.email, 
             
-      
         })
     
         .then(function(response){
@@ -36,7 +39,8 @@ class UpdatePlayer extends React.Component{
         let value = event.target.value
         this.setState({[n]:value})
         }
-    
+
+     
     
     
     
@@ -44,6 +48,7 @@ class UpdatePlayer extends React.Component{
     return(
             <div>
                 <form>
+                    <input  type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleChange}/>
                     <input  type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
                     <input  type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange}/>
                 </form>

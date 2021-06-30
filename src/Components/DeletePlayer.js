@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import ListPlayers from './ListPlayers';
+import PlayerService from '../Services/PlayerService';
 
 
 class DeletePlayer extends React.Component{
@@ -16,13 +17,13 @@ constructor(props)
 
     }
     this.handleChange = this.handleChange.bind(this)
-    this.delete = this.delete.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
 }
 
 
 
 delete(){
-    axios.delete(`http://localhost:8081/api/player/${this.state.id}`)
+    PlayerService.delete(this.state.id)
     .then(function(response){
         console.log(response);
         alert("player deleted");
@@ -40,9 +41,9 @@ handleChange(event){
     this.setState({[n]:value})
     }
 
-    deleteItem(){
-        let itemId = this.state.id
-        return axios.delete(`http://localhost:8081/api/player/${itemId}`)
+    deleteItem(id){
+        // let id = this.state.id
+        return axios.delete(`http://localhost:8081/api/player/${id}`)
     }
 
 
@@ -56,7 +57,7 @@ return(
                 <input  type="text" name="id" placeholder="id" value={this.state.id} onChange={this.handleChange}/>
                 <button onSubmit={this.deleteItem} onClick={this.delete} type="submit">Submit</button>
             </form>
-            <ListPlayers  deleteItem ={this.deleteItem}/>
+           
         </div>
 
 
