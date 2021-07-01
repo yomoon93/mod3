@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import '../App.scss'
 class AddPlayer extends React.Component {
   constructor(props) {
     super(props);
@@ -49,46 +49,57 @@ class AddPlayer extends React.Component {
   render() {
     return (
       <div>
+        <div className="d-flex justify-content-center">
+
         <form>
           <input
-            type="text"
-            name="name"
-            placeholder="name"
-            value={this.state.name}
-            onChange={this.handleChange}
+          className="form-control"
+          type="text"
+          name="name"
+          placeholder="name"
+          value={this.state.name}
+          onChange={this.handleChange}
           />
           <input
-            type="number"
-            name="age"
-            placeholder="age"
-            value={this.state.age}
-            onChange={this.handleChange}
+          className="form-control"
+          type="number"
+          name="age"
+          placeholder="age"
+          value={this.state.age}
+          onChange={this.handleChange}
           />
           <input
-            type="text"
-            name="username"
-            placeholder="username"
-            value={this.state.username}
-            onChange={this.handleChange}
+          className="form-control"
+          type="text"
+          name="username"
+          placeholder="username"
+          value={this.state.username}
+          onChange={this.handleChange}
           />
           <input
-            type="text"
-            name="password"
+          className="form-control"
+          type="text"
+          name="password"
             placeholder="password"
             value={this.state.password}
             onChange={this.handleChange}
-          />
+            />
           <input
+            className="form-control"
             type="text"
             name="email"
             placeholder="email"
             value={this.state.email}
             onChange={this.handleChange}
-          />
+            />
         </form>
-        <button onClick={this.post} type="submit">
+            </div>
+            <div className="d-flex justify-content-center">
+
+        <button type="button" className="btn btn-primary" onClick={this.post} type="submit">
           Submit
         </button>
+            </div>
       </div>
     );
   }

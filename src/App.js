@@ -5,7 +5,7 @@ import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import UpdatePlayer from './Components/UpdatePlayer';
 import Navbar from './NavBar/navbar';
 import SearchPlayer from './Components/SearchPlayer';
-import Footer from './Footer/Footer';
+
 import './App.scss';
 
 

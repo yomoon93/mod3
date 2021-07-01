@@ -12,7 +12,7 @@ import * as AiIcons from 'react-icons/ai'
         const showSidebar = () => setSidebar(!sidebar)
             return(
                 <>
-            <IconContext.Provider value={{color:'purple'}}>
+            <IconContext.Provider value={{color:'red'}}>
                 <div className='navbar'>
                         <Link to='#' className='menu-bars'>
                             <FaIcons.FaBars onClick={showSidebar}/>

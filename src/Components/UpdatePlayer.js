@@ -8,7 +8,7 @@ class UpdatePlayer extends React.Component{
     {
         super(props)
         this.state={
-            id:'',
+            id:props.location.pathname.split('/')[2],
             name:'',
             username:'',
             email:'',
@@ -32,6 +32,7 @@ class UpdatePlayer extends React.Component{
     
         .then(function(response){
             console.log(response);
+            alert("Update Successful")
         })
     }
     handleChange(event){
@@ -45,6 +46,8 @@ class UpdatePlayer extends React.Component{
     
     
     render(){
+        // console.log(this.props)
+        console.log(this.state.id)
     return(
             <div>
                 <form>

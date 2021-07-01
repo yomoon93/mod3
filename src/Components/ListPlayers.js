@@ -14,6 +14,7 @@ class ListPlayers extends React.Component {
     this.deleteItem = this.deleteItem.bind(this);
     this.getNewInfo = this.getNewInfo.bind(this);
     this.updateSite = this.updateSite.bind(this);
+    this.searchP = this.searchP.bind(this);
     // this.updateItem = this.updateItem.bind(this);
   }
 
@@ -24,6 +25,10 @@ class ListPlayers extends React.Component {
     PlayerService.getPlayers().then((res) => {
       this.setState({ players: res.data });
     });
+  }
+
+  searchP(){
+      this.props.history.push("/searchplayer")
   }
 
   addPlayer() {
@@ -71,11 +76,15 @@ class ListPlayers extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="heading">Players List</h2>
+        <h2 className="heading">Search List</h2>
         <div></div>
         <div className="container1">
           <h2>Players on the Website</h2>
-          <small>MoonDoc</small>
+       
+   
+          <button className="btn-primary-one" onClick={this.searchP}>Search</button>
+          <button className="btn-primary-one" onClick={this.addPlayer}>Add</button>
+          
           <ul className="responsive-table">
             <li className="table-header">
               <div className="col col-1">ID</div>
@@ -109,13 +118,11 @@ class ListPlayers extends React.Component {
                   </div>
                 </li>
                 <li className="table-row1">
-                  <button name={player.id} onClick={this.deleteItem}>
+                  <button className="btn-primary-two" name={player.id} onClick={this.deleteItem}>
                     Delete
                   </button>
-                  <button className="btn-primary" onClick={this.addPlayer}>
-                    Add 
-                  </button>
-                  <button name={player.id} onClick={this.updateSite}>Update</button>
+               
+                  <button className="btn-primary-two" name={player.id} onClick={this.updateSite}>Update</button>
                 </li>
               </div>
             ))}

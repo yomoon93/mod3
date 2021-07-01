@@ -14,21 +14,16 @@ export const SidebarData = [
     cName: 'nav-text'
     },
     {
-    title:'Dashboard',
-    link:'/dashboard',
+    title:'Add',
+    link:'/addplayer',
     icon: <AiIcons.AiFillDashboard/>,
     cName: 'nav-text'
     },
     {
-    title:'Manage Users',
-    link:'/profile',
+    title:'Update',
+    link:'/updateplayer',
     icon: <FcIcons.FcManager/>,
     cName: 'nav-text'
     },
-    {
-    title:'About',
-    link:'/about',
-    icon: <FcIcons.FcAbout/>,
-    cName: 'nav-text'
-    },
+  
 ]
